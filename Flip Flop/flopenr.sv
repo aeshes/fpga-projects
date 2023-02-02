@@ -1,7 +1,7 @@
 module flopenr(input logic clk,
                input logic reset,
-			   input logic enable,
-			   input logic d,
+	       input logic enable,
+	       input logic d,
                output logic out);
 					
 	always_ff @(posedge clk, posedge reset)
