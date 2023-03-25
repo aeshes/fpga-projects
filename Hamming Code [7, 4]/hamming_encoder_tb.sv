@@ -13,8 +13,6 @@ module hamming_encoder_tb();
     
     initial
     begin
-        data = 4'b0000;
-        #100
         data = 4'b0011;
         #100
         data = 4'b0101;

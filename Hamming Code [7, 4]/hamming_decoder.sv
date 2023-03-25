@@ -8,21 +8,21 @@ module hamming_decoder(
     logic [6:0] code;
     always @(posedge clk)
     begin
-        syndrome[2] = codeword[6] ^ codeword[5] ^ codeword[3] ^ codeword[2];
-        syndrome[1] = codeword[6] ^ codeword[4] ^ codeword[3] ^ codeword[1];
-        syndrome[0] = codeword[5] ^ codeword[4] ^ codeword[3] ^ codeword[0];
+        syndrome[2] <= codeword[2] ^ codeword[6] ^ codeword[5] ^ codeword[4];
+        syndrome[1] <= codeword[1] ^ codeword[5] ^ codeword[4] ^ codeword[3];
+        syndrome[0] <= codeword[0] ^ codeword[6] ^ codeword[5] ^ codeword[3];
         
         code <= codeword;
         
         if (syndrome != 0)
-            code[syndrome] = ~codeword[syndrome];
+            code[syndrome] <= ~codeword[syndrome];
      end
      
      always @(code)
      begin
-        data[3] = code[6];
-        data[2] = code[5];
-        data[1] = code[4];
-        data[0] = code[3];
+        data[3] <= code[6];
+        data[2] <= code[5];
+        data[1] <= code[4];
+        data[0] <= code[3];
      end
 endmodule
