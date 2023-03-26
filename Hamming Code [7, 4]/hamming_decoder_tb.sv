@@ -13,16 +13,14 @@ module hamming_decoder_tb();
     
     initial
     begin
-        codeword = 7'b0011100;
+        codeword = 7'b0011001;
         #100
-        codeword = 7'b0101010;
+        codeword = 7'b0101100;
         #100
-        codeword = 7'b1010101;
+        codeword = 7'b1010011;
         #100
-        codeword = 7'b1011100;
+        codeword = 7'b1011001;
         #100
-        codeword = 7'b0001010;
-        #100
-        codeword = 7'b1010001;
+        codeword = 7'b0101000;
     end
 endmodule
