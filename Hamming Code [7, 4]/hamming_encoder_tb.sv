@@ -18,7 +18,5 @@ module hamming_encoder_tb();
         data = 4'b0101;
         #100
         data = 4'b1010;
-        #100
-        data = 4'b1111;
     end
 endmodule
