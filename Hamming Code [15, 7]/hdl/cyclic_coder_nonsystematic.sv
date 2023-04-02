@@ -6,14 +6,14 @@ module cyclic_coder_nonsystematic(
     output reg out
 );
 
-    reg [3:0] s;
+    logic [3:0] s;
     
     always @(posedge clk) begin
         if (reset)
-            s <= 4'd0;
-        else if (enable) begin
+            s <= '0;
+        else if (enable)
             s <= { in, s[3:1] };
-            out <= in ^ s[1] ^ s[0];
-        end
     end
+    
+    assign out = in ^ s[1] ^ s[0];
 endmodule
